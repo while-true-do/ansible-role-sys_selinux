@@ -1,0 +1,25 @@
+---
+# tasks file for while_true_do.sys_selinux
+
+- name: Manage selinux Packages
+  package:
+    name: "{{ wtd_sys_selinux_package }}"
+    state: "{{ wtd_sys_selinux_package_state }}"
+  become: true
+  tags:
+    - package
+    - security
+    - selinux
+    - system
+
+- name: Configure selinux
+  selinux:
+    policy: "{{ wtd_sys_selinux_policy }}"
+    state: "{{ wtd_sys_selinux_mode }}"
+  become: true
+  when: wtd_sys_selinux_package_state != "absent"
+  tags:
+    - configuration
+    - selinux
+    - security
+    - system

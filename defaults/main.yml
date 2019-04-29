@@ -1,0 +1,28 @@
+---
+# defaults file for while_true_do.sys_selinux
+
+wtd_sys_selinux_package:
+  - policycoreutils
+  - policycoreutils-python
+  - selinux-policy
+  - selinux-policy-targeted
+  - libselinux-python
+  - libselinux-utils
+  - setroubleshoot-server
+  - setools
+  - setools-console
+  - mcstrans
+# State can be present|latest|absent
+wtd_sys_selinux_package_state: "present"
+
+# wtd_sys_selinux_mode can be:
+# enforcing   =>  SELinux security policy is enforced
+# permissive  =>  SELinux prints warnings instead of enforcing
+# disabled    =>  No SELinux policy is loaded
+wtd_sys_selinux_mode: "enforcing"
+
+# wtd_sys_selinux_policy can be:
+# targeted  =>  Targeted processes are protected
+# minimum   =>  Modification of targeted policy. Only selected processes are protected
+# mls       =>  Multi Level Security protection
+wtd_sys_selinux_policy: "targeted"
