@@ -14,8 +14,8 @@
 
 - name: Configure selinux
   selinux:
-    policy: "{{ wtd_sys_selinux_policy }}"
-    state: "{{ wtd_sys_selinux_mode }}"
+    policy: "{{ wtd_sys_selinux_conf_policy }}"
+    state: "{{ wtd_sys_selinux_conf_mode }}"
   become: true
   when: wtd_sys_selinux_package_state != "absent"
   tags:

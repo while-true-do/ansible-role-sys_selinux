@@ -62,6 +62,7 @@ git clone https://github.com/while-true-do/ansible-role-sys_selinux.git while_tr
 ---
 # defaults file for while_true_do.sys_selinux
 
+## Package Management
 wtd_sys_selinux_package:
   - policycoreutils
   - policycoreutils-python
@@ -76,17 +77,18 @@ wtd_sys_selinux_package:
 # State can be present|latest|absent
 wtd_sys_selinux_package_state: "present"
 
+## Configuration Management
 # wtd_sys_selinux_mode can be:
 # enforcing   =>  SELinux security policy is enforced
 # permissive  =>  SELinux prints warnings instead of enforcing
 # disabled    =>  No SELinux policy is loaded
-wtd_sys_selinux_mode: "enforcing"
+wtd_sys_selinux_conf_mode: "enforcing"
 
 # wtd_sys_selinux_policy can be:
 # targeted  =>  Targeted processes are protected
 # minimum   =>  Modification of targeted policy. Only selected processes are protected
 # mls       =>  Multi Level Security protection
-wtd_sys_selinux_policy: "targeted"
+wtd_sys_selinux_conf_policy: "targeted"
 ```
 
 ### Example Playbook
