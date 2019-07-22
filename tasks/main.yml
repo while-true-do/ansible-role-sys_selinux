@@ -1,7 +1,7 @@
 ---
 # tasks file for while_true_do.sys_selinux
 
-- name: Manage selinux Packages
+- name: Manage SELinux Packages
   package:
     name: "{{ wtd_sys_selinux_package }}"
     state: "{{ wtd_sys_selinux_package_state }}"
@@ -12,7 +12,7 @@
     - selinux
     - system
 
-- name: Configure selinux
+- name: Manage SELinux Configuration
   selinux:
     policy: "{{ wtd_sys_selinux_conf_policy }}"
     state: "{{ wtd_sys_selinux_conf_mode }}"
